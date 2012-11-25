@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+    <style>
+        body: {margin: 0; padding: 0; }
+        nav {display: inline-block;
+             margin: 0; padding: 0;
+             border: 1px solid black;
+             width: 14%;
+             vertical-align: top;}
+        #content {
+            display: inline-block;
+            margin: 0; padding: 0;
+            width: 85%;
+            float: right;
+            border: 1px solid green;
+            vertical-align: top;
+        }
+        .page {
+            display: none;
+        }
+    </style>
+<head>
+
+
+<body>
+    <nav>
+        <ul>
+            <li class="pagelink" id="page0-li">sec1</li>
+            <li class="pagelink" id="page1-li">sec2</li>
+            <li class="pagelink" id="page2-li">sec3</li>
+            <li class="pagelink" id="page3-li">sec4</li>
+            <li class="pagelink" id="page4-li">sec5</li>
+            <li class="pagelink" id="page5-li">sec6</li>
+            <li class="pagelink" id="page6-li">sec7</li>
+        </ul>
+    </nav>
+    <div id="content">
+        <div class="page" id="page0">
+            Page 1
+        </div>
+        <div class="page" id="page1">
+            Page 2
+        </div>
+        <div class="page" id="page2">
+            Page 3
+        </div>
+        <div class="page" id="page3">
+            Page 4
+        </div>
+        <div class="page" id="page4">
+            Page 5
+        </div>
+        <div class="page" id="page5">
+            Page 6
+        </div>
+        <div class="page" id="page6">
+            Page 7
+        </div>
+    </div>
+</body>
+
+
+<script>
+
+currentPage = document.getElementById("page0");
+
+var linkElements = document.getElementsByClassName("pagelink");
+for (var i = 0; i < linkElements.length; i++) {
+    var linkElement = linkElements[i];
+    // TODO: properly bind this
+    linkElement.onclick = function() {
+        currentPage.style.display = "none";
+        var pageId = this.id.split("-")[0];
+        currentPage = document.getElementById(pageId);
+        currentPage.style.display = "block";
+    }
+}
+
+</script>
+
+
+</html>
