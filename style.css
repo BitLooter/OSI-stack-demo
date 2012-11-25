@@ -1,0 +1,17 @@
+body: {margin: 0; padding: 0; }
+nav {display: inline-block;
+     margin: 0; padding: 0;
+     border: 1px solid black;
+     width: 14%;
+     vertical-align: top;}
+#content {
+    display: inline-block;
+    margin: 0; padding: 0;
+    width: 85%;
+    float: right;
+    border: 1px solid green;
+    vertical-align: top;
+}
+.page {
+    display: none;
+}

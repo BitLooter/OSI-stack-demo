@@ -4,38 +4,21 @@
 
 <head>
     <title></title>
-    <style>
-        body: {margin: 0; padding: 0; }
-        nav {display: inline-block;
-             margin: 0; padding: 0;
-             border: 1px solid black;
-             width: 14%;
-             vertical-align: top;}
-        #content {
-            display: inline-block;
-            margin: 0; padding: 0;
-            width: 85%;
-            float: right;
-            border: 1px solid green;
-            vertical-align: top;
-        }
-        .page {
-            display: none;
-        }
-    </style>
+    <script type="text/javascript" src="code.js"></script>
+    <link rel="stylesheet" href="style.css" />
 <head>
 
 
 <body>
     <nav>
         <ul>
-            <li class="pagelink" id="page0-li">sec1</li>
-            <li class="pagelink" id="page1-li">sec2</li>
-            <li class="pagelink" id="page2-li">sec3</li>
-            <li class="pagelink" id="page3-li">sec4</li>
-            <li class="pagelink" id="page4-li">sec5</li>
-            <li class="pagelink" id="page5-li">sec6</li>
-            <li class="pagelink" id="page6-li">sec7</li>
+            <li class="pagelink" id="page0-li">7. Application</li>
+            <li class="pagelink" id="page1-li">6. Presentation</li>
+            <li class="pagelink" id="page2-li">5. Session</li>
+            <li class="pagelink" id="page3-li">4. Transport</li>
+            <li class="pagelink" id="page4-li">3. Network</li>
+            <li class="pagelink" id="page5-li">2. Data link</li>
+            <li class="pagelink" id="page6-li">1. Physical</li>
         </ul>
     </nav>
     <div id="content">
@@ -62,25 +45,6 @@
         </div>
     </div>
 </body>
-
-
-<script>
-
-currentPage = document.getElementById("page0");
-
-var linkElements = document.getElementsByClassName("pagelink");
-for (var i = 0; i < linkElements.length; i++) {
-    var linkElement = linkElements[i];
-    // TODO: properly bind this
-    linkElement.onclick = function() {
-        currentPage.style.display = "none";
-        var pageId = this.id.split("-")[0];
-        currentPage = document.getElementById(pageId);
-        currentPage.style.display = "block";
-    }
-}
-
-</script>
 
 
 </html>
