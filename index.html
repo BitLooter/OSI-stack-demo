@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title></title>
+    <title>OSI Layers Demo</title>
     <script type="text/javascript" src="code.js"></script>
     <link rel="stylesheet" href="style.css" />
 <head>
@@ -19,29 +19,63 @@
             <li class="pagelink" id="page4-li">3. Network</li>
             <li class="pagelink" id="page5-li">2. Data link</li>
             <li class="pagelink" id="page6-li">1. Physical</li>
+            <li class="pagelink" id="page7-li">Resources</li>
         </ul>
     </nav>
     <div id="content">
-        <div class="page" id="page0">
-            Page 1
+        <div class="page" id="page0" style="display: block">
+            <h1><a href="http://en.wikipedia.org/wiki/Application_layer">Application layer</a></h1>
+            <p>The Application layer consists of the protocols programs use to communicate with
+                other programs in a network, as opposed to lower-level protocols that manage the actual
+                transfer of the data itself. Some commonly used protocols are
+            <a href="http://en.wikipedia.org/wiki/HyperText_Transfer_Protocol">HTTP</a>,
+            <a href="http://en.wikipedia.org/wiki/File_Transfer_Protocol">FTP</a>, and
+            <a href="http://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol">SMTP</a>.</p>
+            <h2>HTTP example</h2>
+            <h3>Request</h3>
+            <pre><code>GET /index.html HTTP/1.1
+Host: www.example.com</code></pre>
+            <h3>Response</h3>
+            <pre><code>HTTP/1.1 200 OK
+Date: Mon, 23 May 2005 22:38:34 GMT
+Server: Apache/1.3.3.7 (Unix) (Red-Hat/Linux)
+Last-Modified: Wed, 08 Jan 2003 23:11:55 GMT
+Etag: "3f80f-1b6-3e1cb03b"
+Accept-Ranges:  none
+Content-Length: 438
+Connection: close
+Content-Type: text/html; charset=UTF-8</code></pre>
         </div>
         <div class="page" id="page1">
-            Page 2
+            <h1><a href="http://en.wikipedia.org/wiki/Presentation_layer">Presentation layer</a></h1>
+            <p>The presentation layer is used to modify information being passed through the stack. For
+                example, it may compress or encrypt a web page before sending it to the server.</p>
         </div>
         <div class="page" id="page2">
-            Page 3
+            <h1><a href="http://en.wikipedia.org/wiki/Session_layer">Session layer</a></h1>
+            <p>The session layer is used to maintain a semi-permanent...</p>
         </div>
         <div class="page" id="page3">
-            Page 4
+            <h1><a href="http://en.wikipedia.org/wiki/Transport_layer">Transport layer</a></h1>
+            <p>Protocols in the transport layer control how machines talk to each other. They may ensure
+                all the sent information was recieved, that it arrived in the correct order, or that one
+                machine is not sending data faster than the other computer can read it. By far the most
+                commonly used example of this layer is TCP; UDP is also often used where speed or
+                simplicity is more important than data integrity.</p>
         </div>
         <div class="page" id="page4">
-            Page 5
+            <h1><a href="http://en.wikipedia.org/wiki/Network_layer">Network layer</a></h1>
+            <p>The network layer is concerned with how packets get from one computer to another. It
+                deals with addressing and routing - where a computer is on the network and how
+                to reach it through the various routers and other equipment involved.</p>
         </div>
         <div class="page" id="page5">
-            Page 6
+            <h1><a href="http://en.wikipedia.org/wiki/Data_link_layer">Data link layer</a></h1>
+            <p></p>
         </div>
         <div class="page" id="page6">
-            Page 7
+            <h1><a href="http://en.wikipedia.org/wiki/Physical_layer">Physical layer</a></h1>
+            <p></p>
         </div>
     </div>
 </body>
