@@ -1,0 +1,13 @@
+Analogies
+    7: Application layer = vehicle, http = truck
+    6: Presentation layer = packaging?
+    5: Session layer = ?
+    4: Trasport layer = traffic cop?
+    3: Network layer = GPS?
+    2: Data link layer = road markers
+    1: Physical layer = road
+
+Other topics:
+    6: discuss SSL, encryption lock icons
+    5: SPDY
+    1: discuss IPoAC
