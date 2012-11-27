@@ -11,8 +11,8 @@
 
 <body>
     <nav>
-        <ul>
-            <li class="pagelink" id="page0-li">7. Application</li>
+        <ul class="pagelist">
+            <li class="pagelink currentpagelink" id="page0-li">7. Application</li>
             <li class="pagelink" id="page1-li">6. Presentation</li>
             <li class="pagelink" id="page2-li">5. Session</li>
             <li class="pagelink" id="page3-li">4. Transport</li>
@@ -20,6 +20,10 @@
             <li class="pagelink" id="page5-li">2. Data link</li>
             <li class="pagelink" id="page6-li">1. Physical</li>
             <li class="pagelink" id="page7-li">Resources</li>
+        </ul>
+        <ul>
+            <li>data unit types</li>
+            <li>other protocols</li>
         </ul>
     </nav>
     <div id="content">
@@ -33,27 +37,39 @@
             <a href="http://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol">SMTP</a>.</p>
             <h2>HTTP example</h2>
             <h3>Request</h3>
-            <pre><code>GET /index.html HTTP/1.1
-Host: www.example.com</code></pre>
+            <pre><code>GET /widgets.html HTTP/1.1
+Host: bobswidgets.com</code></pre>
             <h3>Response</h3>
             <pre><code>HTTP/1.1 200 OK
 Date: Mon, 23 May 2005 22:38:34 GMT
 Server: Apache/1.3.3.7 (Unix) (Red-Hat/Linux)
 Last-Modified: Wed, 08 Jan 2003 23:11:55 GMT
-Etag: "3f80f-1b6-3e1cb03b"
-Accept-Ranges:  none
 Content-Length: 438
-Connection: close
-Content-Type: text/html; charset=UTF-8</code></pre>
+Content-Type: text/html; charset=UTF-8
+
+[Response data such as HTML goes here, ommited for space and
+because I'm too lazy to write a fake web page]</code></pre>
         </div>
         <div class="page" id="page1">
             <h1><a href="http://en.wikipedia.org/wiki/Presentation_layer">Presentation layer</a></h1>
             <p>The presentation layer is used to modify information being passed through the stack. For
-                example, it may compress or encrypt a web page before sending it to the server.</p>
+                example, it may compress or encrypt a web page before sending it to the server. HTTP
+                gzip compression and TLS are often used for these purposes on the web.</p>
+
+                <p><h2>Encrypting a web page</h2>
+                <img src="crypto.png" style="clear: both" />
+                </p>
         </div>
         <div class="page" id="page2">
             <h1><a href="http://en.wikipedia.org/wiki/Session_layer">Session layer</a></h1>
-            <p>The session layer is used to maintain a semi-permanent...</p>
+            <p>The session layer is used to maintain a continuous dialog between two computers. For
+                example, streaming video from the internet with NetFlix, a videochat application, or
+                an online game all require one or more constant streams of data, and a protocol in the
+                session layer manages the connection. The session layer is not typically used for
+                normal web browsing, though a handful of websites make use of SPDY to speed load times.</p>
+            <img src="netflix.jpg" />
+            <img src="skype.jpg" />
+            <img src="ps2.jpg" />
         </div>
         <div class="page" id="page3">
             <h1><a href="http://en.wikipedia.org/wiki/Transport_layer">Transport layer</a></h1>
@@ -62,20 +78,68 @@ Content-Type: text/html; charset=UTF-8</code></pre>
                 machine is not sending data faster than the other computer can read it. By far the most
                 commonly used example of this layer is TCP; UDP is also often used where speed or
                 simplicity is more important than data integrity.</p>
+            <h2>TCP Header Diagram</h2>
+            <img src="tcpheader.png" />
         </div>
         <div class="page" id="page4">
             <h1><a href="http://en.wikipedia.org/wiki/Network_layer">Network layer</a></h1>
-            <p>The network layer is concerned with how packets get from one computer to another. It
-                deals with addressing and routing - where a computer is on the network and how
+            <p>The network layer is concerned with how data gets from a computer to its destination.
+                It deals with addressing and routing - where a computer is on the network and how
                 to reach it through the various routers and other equipment involved.</p>
+            <p>The vast majority of networks make use of IPv4 for this purpose, and this is the layer
+                where IP addresses are used. IPv6 is an improved version of IPv4 with near limitless
+                potential addresses and will eventually replace IPv4.</p>
+            <h2>IPv4 Header Diagram</h2>
+            <img src="ipv4header.png" />
         </div>
         <div class="page" id="page5">
             <h1><a href="http://en.wikipedia.org/wiki/Data_link_layer">Data link layer</a></h1>
-            <p></p>
+            <p>The data link layer manages direct communication between individual devices, such as a
+                computer and a switch. It often goes hand-in-hand with the physical layer, and can
+                be seen as the software half of the two layers.</p>
+            <p>MAC addressses are assigned and used at this layer.</p>
         </div>
         <div class="page" id="page6">
             <h1><a href="http://en.wikipedia.org/wiki/Physical_layer">Physical layer</a></h1>
-            <p></p>
+            <p>As the name implies, the physical layer represents the hardware all the other layers
+                must ultimately use to communicate. Standards in this layer describe connecters,
+                wires, voltages and radio frequencies, and other hardware details. It deals only
+                with raw binary data; the other layers built on top of it are responsible for
+                giving meaning to that data.</p>
+            <h2>Examples</h2>
+            <ul>
+                <li>Ethernet, Wi-Fi</li>
+                <li>Cable or DSL modem</li>
+                <li>Dialup modem</li>
+            </ul>
+            <img src="ethernet.jpg" />
+            <img src="dslmodem.jpg" />
+            <img src="wifi.jpg" />
+        </div>
+        <div class="page" id="page7">
+            <h1>Further reading</h1>
+            <ul>
+                <li><a href="http://en.wikipedia.org/wiki/OSI_model">Wikipedia page about the OSI model</a>
+                    <ul>
+                        <li><a href="http://en.wikipedia.org/wiki/Application_layer">Application layer</a></li>
+                        <li><a href="http://en.wikipedia.org/wiki/Presentation_layer">Presentation layer</a></li>
+                        <li><a href="http://en.wikipedia.org/wiki/Session_layer">Session layer</a></li>
+                        <li><a href="http://en.wikipedia.org/wiki/Transport_layer">Transport layer</a></li>
+                        <li><a href="http://en.wikipedia.org/wiki/Network_layer">Network layer</a></li>
+                        <li><a href="http://en.wikipedia.org/wiki/Data_link_layer">Data link layer</a></li>
+                        <li><a href="http://en.wikipedia.org/wiki/Physical_layer">Physical layer</a></li>
+                    </ul>
+                </li>
+                <li>Various protocols &amp; standards
+                    <ul>
+                        <li><a href="http://en.wikipedia.org/wiki/HyperText_Transfer_Protocol">HTTP</a></li>
+                        <li><a href="http://en.wikipedia.org/wiki/Transmission_Control_Protocol">TCP</a></li>
+                        <li><a href="http://en.wikipedia.org/wiki/Internet_Protocol">IP</a></li>
+                        <li><a href="http://en.wikipedia.org/wiki/Ethernet">Ethernet</a></li>
+                        <li><a href="http://en.wikipedia.org/wiki/Transport_Layer_Security">SSL/TLS</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
 </body>
