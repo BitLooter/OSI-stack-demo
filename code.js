@@ -17,6 +17,8 @@ function init()
             currentLink = this;
         }
     }
+
+    document.getElementById("pagenav").style.height = window.innerHeight + "px";
 }
 
 

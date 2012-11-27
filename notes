@@ -1,3 +1,8 @@
+Examples
+    7: Bob's widgets http
+    6: Bob's widgets order form encryption
+    5: discuss other stuff
+
 Analogies
     7: Application layer = vehicle, http = truck
     6: Presentation layer = packaging?
@@ -11,3 +16,10 @@ Other topics:
     6: discuss SSL, encryption lock icons
     5: SPDY
     1: discuss IPoAC
+
+Data types:
+    7-5: data
+    4: segments
+    3: packets
+    2: frames
+    1: bits
